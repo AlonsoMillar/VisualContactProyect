@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Teclado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="teclado-page">
+
+  <!-- Display del número -->
+  <div class="display-number glass-card">
+    <h1>{{ phoneNumber || ' ' }}</h1>
+  </div>
+
+  <!-- Contenedor del teclado -->
+  <div class="teclado-container">
+
+    <div class="keypad">
+
+      <!-- Cada fila -->
+      <div class="key-row">
+        <button class="key-btn" (click)="addNumber('1')"><span>1</span></button>
+        <button class="key-btn" (click)="addNumber('2')"><span>2</span></button>
+        <button class="key-btn" (click)="addNumber('3')"><span>3</span></button>
+      </div>
+
+      <div class="key-row">
+        <button class="key-btn" (click)="addNumber('4')"><span>4</span></button>
+        <button class="key-btn" (click)="addNumber('5')"><span>5</span></button>
+        <button class="key-btn" (click)="addNumber('6')"><span>6</span></button>
+      </div>
+
+      <div class="key-row">
+        <button class="key-btn" (click)="addNumber('7')"><span>7</span></button>
+        <button class="key-btn" (click)="addNumber('8')"><span>8</span></button>
+        <button class="key-btn" (click)="addNumber('9')"><span>9</span></button>
+      </div>
+
+      <div class="key-row">
+        <button class="key-btn" (click)="addNumber('*')"><span>*</span></button>
+        <button class="key-btn" (click)="addNumber('0')"><span>0</span></button>
+        <button class="key-btn" (click)="addNumber('#')"><span>#</span></button>
+      </div>
+
+    </div>
+
+    <!-- Botones acción -->
+    <div class="action-row">
+
+      <button class="call-btn glass-card" (click)="makeCall()">
+        <ion-icon name="call-outline"></ion-icon>
+      </button>
+
+      <button class="delete-btn glass-card" (click)="deleteNumber()">
+        <ion-icon name="backspace-outline"></ion-icon>
+      </button>
+
+    </div>
+
+  </div>
+
+</ion-content>
+
+
+<!-- ==============================
+     Barra de navegación inferior
+     ============================== -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-justify-content-space-around ion-align-items-center">
+        <ion-col class="ion-text-center">
+          <ion-button fill="clear" [routerLink]="['/teclado']" class="active">
+            <ion-icon name="keypad-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <ion-button fill="clear" [routerLink]="['/recientes']">
+            <ion-icon name="time-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <ion-button fill="clear" [routerLink]="['/home']">
+            <ion-icon name="people-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
